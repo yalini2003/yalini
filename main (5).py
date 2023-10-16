@@ -1,37 +1,31 @@
-#2.2 Implement a class called Player that represents a cricket player. The Player class should have a method called play() which prints "The player is playing cricket. Derive two classes, Batsman and Bowler, from the Player class. Override the play() method in each derived class to print "The batsman is batting" and "The bowler is bowling", respectively. Write a program to create objects of both the Batsman and Bowler classes and call the play() method for each object.
+#3.1 Write a function called linear_search_product that takes the list of products and a target product name as input. The function should perform a linear search to find the target product in the list and return a list of indices of all occurrences of the product if found, or an empty list if the product is not found.
 
-# Define the Player class
+def linear_search_product(product_list, target_product):
 
-class Player:
+    indices = []
 
-    def play(self):
+    for i, product in enumerate(product_list):
 
-        print("The player is playing cricket.")
+        if product == target_product:
 
-# Define the Batsman class, derived from Player
+            indices.append(i)
 
-class Batsman(Player):
+    return indices
 
-    def play(self):
 
-        print("The batsman is batting.")
 
-# Define the Bowler class, derived from Player
+# Example usage:
 
-class Bowler(Player):
+products = ["apple", "banana", "apple", "orange", "apple"]
 
-    def play(self):
+target = "apple"
 
-        print("The bowler is bowling.")
+result = linear_search_product(products, target)
 
-# Create objects of Batsman and Bowler classes
+if result:
 
-batsman = Batsman()
+    print(f"The product '{target}' was found at indices: {result}")
 
-bowler = Bowler()
+else:
 
-# Call the play() method for each object
-
-batsman.play()
-
-bowler.play()
+    print(f"The product '{target}' was  found in the list.")
